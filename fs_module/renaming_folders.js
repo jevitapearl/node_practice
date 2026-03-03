@@ -1,7 +1,7 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
 
-const filepath = "C:\\Movies\\How I Met Your Mother\\How I Met Your Mother S09\\";
+const filepath = "C:\\Movies\\Game of Thrones\\S08\\";
 
 try{
   const files = fs.readdirSync(filepath);
@@ -12,7 +12,7 @@ try{
       const fileExt = path.extname(file);
       const fileName = path.basename(file, fileExt);
 
-      const newName = `How I Met Your Mother S09 E${(index<9)?("0"+(index+1)):(index+1)}`;
+      const newName = `Game of Thrones S08 E${(index<9)?("0"+(index+1)):(index+1)}`;
 
       fs.renameSync(filepath+fileName+fileExt, filepath+newName+fileExt);
 
